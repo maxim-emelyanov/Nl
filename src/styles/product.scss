@@ -1,0 +1,170 @@
+.content__additional {
+  font-size: 13px;
+}
+.content__text {
+  font-size: 16px;
+}
+.content__caption {
+  font-size: 22px;
+}
+.product__title {
+  font-size: 28px;
+}
+.content__text {
+  font-weight: 400;
+}
+.product__title,
+.content__caption {
+  font-weight: 800;
+}
+.product {
+  min-height: 900px;
+  text-align: center;
+  &__title {
+    margin-top: 125px;
+  }
+  &__what-is-it {
+    margin-top: 130px;
+  }
+}
+.product__title {
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  &:after,
+  &:before {
+    content: "";
+    width: 60px;
+    border-top: 1px solid #babdc1;
+    position: absolute;
+    right: -85px;
+    top: 50%;
+  }
+  &:before {
+    right: auto;
+    left: -85px;
+  }
+}
+.what-is-it {
+  display: grid;
+  grid-template-areas: "france features tasty" "expertise features helpful" "calories features tea";
+  grid-template-columns: 1fr 1.2fr 1fr;
+  grid-template-rows: 0.7fr 1.2fr 0.7fr;
+}
+.item {
+  color: #282528;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  text-align: left;
+  &__ico {
+    padding: 10px 6px;
+    width: 40px;
+  }
+  &__content {
+    margin-left: 35px;
+  }
+}
+.content {
+  &__caption {
+    margin-bottom: 10px;
+  }
+  &__additional {
+    color: #a8a8a8;
+  }
+  ul {
+    padding-left: 20px;
+    margin: 0;
+  }
+}
+.france {
+  grid-area: france;
+}
+.expertise {
+  grid-area: expertise;
+}
+.calories {
+  grid-area: calories;
+}
+.tasty {
+  grid-area: tasty;
+}
+.helpful {
+  grid-area: helpful;
+}
+.tea {
+  grid-area: tea;
+}
+.features {
+  grid-area: features;
+  margin-top: -15px;
+  width: 430px;
+  margin: auto;
+}
+@media (max-width: 1170px) {
+  .what-is-it {
+    grid-template-areas: "france features" "expertise features " "calories features" "tasty features" "helpful features" "tea features";
+    grid-template-columns: 1.8fr 1fr;
+    grid-template-rows: 0.7fr 1.1fr 0.7fr 0.6fr 1.3fr 0.7fr;
+  }
+  .features {
+    width: 250px;
+  }
+}
+@media (max-width: 992px) {
+  .content__additional {
+    font-size: 10px;
+  }
+  .content__text {
+    font-size: 12px;
+  }
+  .content__caption {
+    font-size: 18px;
+  }
+  .product__title {
+    font-size: 24px;
+  }
+  .product {
+    min-height: 700px;
+    &__title {
+      margin-top: 40px;
+    }
+    &__what-is-it {
+      margin-top: 60px;
+    }
+  }
+  .what-is-it {
+    grid-template-rows: 90px 100px 60px 60px 120px;
+  }
+  .item__ico {
+    width: 30px;
+    padding: 0 5px 0 20px;
+  }
+  .content__caption {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 768px) {
+  .content__additional {
+    font-size: 10px;
+  }
+  .content__text {
+    font-size: 11px;
+  }
+  .content__caption {
+    font-size: 14px;
+  }
+}
+@media (max-width: 576px) {
+  .product__title {
+    &:after,
+    &:before {
+      display: none;
+    }
+  }
+  .what-is-it {
+    grid-template-areas: "features" "france" "expertise" "calories" "tasty" "helpful" "tea";
+    grid-template-columns: 1fr;
+    grid-template-rows: 330px 80px 105px 75px 72px 130px;
+  }
+}
