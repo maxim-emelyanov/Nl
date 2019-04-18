@@ -28,7 +28,9 @@ require("../styles/main.scss");
             else
                 menu.find(`[href='#${element.attr('id')}']`).removeClass('active');
         }
-        $("[data-hover-text]").hover(function(){
+        $("[data-hover-text]").hover(function(event){
+            if (event.originalEvent.sourceCapabilities.firesTouchEvents)
+                    return;
             let oldText = $(this).html();
             $(this).html($(this).attr("data-hover-text"));
             $(this).attr("data-hover-text", oldText);
